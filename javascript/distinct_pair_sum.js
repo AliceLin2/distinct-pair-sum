@@ -1,14 +1,31 @@
+// function distinctPairSum(arr, k) {
+//   // type your code here
+//   let result = []
+//   let temp = []
+//   for (let i=0; i<arr.length; i++){
+//     if(arr.indexOf(k-arr[i])!==-1 && arr.indexOf(k-arr[i])!==i && temp.indexOf(arr[i])===-1){
+//       let group = []
+//       group.push(arr[i])
+//       group.push(arr[arr.indexOf(k-arr[i])])
+//       temp.push(arr[i])
+//       temp.push(arr[arr.indexOf(k-arr[i])])
+//       result.push(group)
+//     }
+//   }
+//   return result
+// }
+
 function distinctPairSum(arr, k) {
   // type your code here
   let result = []
   let temp = []
   for (let i=0; i<arr.length; i++){
-    if(arr.indexOf(k-arr[i])!==-1 && arr.indexOf(k-arr[i])!==i && temp.indexOf(arr[i])===-1){
+    if(arr[i+1]+arr[i]===k && temp.indexOf(arr[i])===-1){
       let group = []
       group.push(arr[i])
-      group.push(arr[arr.indexOf(k-arr[i])])
+      group.push(arr[i+1])
       temp.push(arr[i])
-      temp.push(arr[arr.indexOf(k-arr[i])])
+      temp.push(arr[i+1])
       result.push(group)
     }
   }
